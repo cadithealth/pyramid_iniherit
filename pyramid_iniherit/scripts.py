@@ -8,19 +8,20 @@
 
 import sys
 from . import install
+from resolve import resolve
 
 #------------------------------------------------------------------------------
 def proxy(argv=sys.argv):
   pcmd = argv[0][argv[0].rindex('i-') + 2:]
-  mod  = __import__('pyramid.scripts.' + pcmd)
-  main = getattr(getattr(getattr(mod, 'scripts'), pcmd), 'main')
-  return main(argv=argv)
+  return resolve('pyramid.scripts.' + pcmd + ':main')(argv=argv)
 
 #------------------------------------------------------------------------------
 def pscheduler():
-  mod  = __import__('pyramid_scheduler.pscheduler')
-  main = getattr(getattr(mod, 'pscheduler'), 'main')
-  return main()
+  return resolve('pyramid_scheduler.pscheduler:main')()
+
+#------------------------------------------------------------------------------
+def alembic():
+  return resolve('alembic.config:main')()
 
 #------------------------------------------------------------------------------
 # end of $Id$

@@ -40,12 +40,13 @@ entrypoints = {
     'i-ptweens          = pyramid_iniherit.scripts:proxy',
     'i-prequest         = pyramid_iniherit.scripts:proxy',
     'i-pscheduler       = pyramid_iniherit.scripts:pscheduler',
+    'i-alembic          = pyramid_iniherit.scripts:alembic',
     ],
   }
 
 setup(
   name                  = 'pyramid_iniherit',
-  version               = '0.1.1',
+  version               = '0.1.2',
   description           = '',
   long_description      = read('README.rst'),
   classifiers           = [

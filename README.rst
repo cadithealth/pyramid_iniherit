@@ -20,7 +20,7 @@ Usage
 To be able to use ``%inherit``-enabled INI files, do the following:
 
 * Use ``i-pserve`` instead of ``pserve`` (same goes for pshell,
-  proutes, pviews, ptweens, and prequest).
+  proutes, pviews, ptweens, prequest, pscheduler, and alembic).
 
 * Add this line **before** you import any pyramid, paster, or other
   server application module (such as in your WSGI loader):
