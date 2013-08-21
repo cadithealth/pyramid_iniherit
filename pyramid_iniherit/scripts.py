@@ -17,5 +17,11 @@ def proxy(argv=sys.argv):
   return main(argv=argv)
 
 #------------------------------------------------------------------------------
+def pscheduler():
+  mod  = __import__('pyramid_scheduler.pscheduler')
+  main = getattr(getattr(mod, 'pscheduler'), 'main')
+  return main()
+
+#------------------------------------------------------------------------------
 # end of $Id$
 #------------------------------------------------------------------------------
