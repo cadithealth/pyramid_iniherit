@@ -1,0 +1,3 @@
+* When file monitoring is enabled (e.g. with "pserve --reload") only the base
+  INI file is monitored... it would be *grand* if inherited files could be
+  monitored as well...
