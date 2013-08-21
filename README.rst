@@ -22,8 +22,8 @@ To be able to use ``%inherit``-enabled INI files, do the following:
 * Use ``i-pserve`` instead of ``pserve`` (same goes for pshell,
   proutes, pviews, ptweens, prequest).
 
-* If you use WSGI, add this line **before** you import any pyramid,
-  paster, or other module:
+* Add this line **before** you import any pyramid, paster, or other
+  server application module (such as in your WSGI loader):
 
   .. code-block:: python
 
