@@ -28,7 +28,7 @@ test_requires = [
 requires = [
   'distribute           >= 0.6.24',
   'iniherit             >= 0.1.4',
-  'pyramid              == 1.4.2',
+  'pyramid              >= 1.4.2',
   ]
 
 entrypoints = {
@@ -46,7 +46,7 @@ entrypoints = {
 
 setup(
   name                  = 'pyramid_iniherit',
-  version               = '0.1.4',
+  version               = '0.1.5',
   description           = '',
   long_description      = read('README.rst'),
   classifiers           = [
