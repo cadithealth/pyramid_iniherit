@@ -46,7 +46,7 @@ entrypoints = {
 
 setup(
   name                  = 'pyramid_iniherit',
-  version               = '0.1.5',
+  version               = '0.1.6',
   description           = '',
   long_description      = read('README.rst'),
   classifiers           = [
