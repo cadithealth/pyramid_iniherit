@@ -22,15 +22,17 @@ iniherit.mixin.install_globally()
 
 # install a "watching" file loader
 import iniherit.parser
-from pyramid.scripts.pserve import watch_file
 
-iniherit.parser._real_Loader = iniherit.parser.Loader
-class WatchingLoader(iniherit.parser._real_Loader):
-  def load(self, name, encoding=None):
-    try: watch_file(name)
-    except: pass
-    return iniherit.parser._real_Loader.load(self, name, encoding)
-iniherit.parser.Loader = WatchingLoader
+if not hasattr(iniherit.parser, '_real_Loader'):
+  iniherit.parser._real_Loader = iniherit.parser.Loader
+  class WatchingLoader(iniherit.parser._real_Loader):
+    def load(self, name, encoding=None):
+      try:
+        from pyramid.scripts.pserve import watch_file
+        watch_file(name)
+      except: pass
+      return iniherit.parser._real_Loader.load(self, name, encoding)
+  iniherit.parser.Loader = WatchingLoader
 
 #------------------------------------------------------------------------------
 # end of $Id$
