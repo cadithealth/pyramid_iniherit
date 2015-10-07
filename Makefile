@@ -13,3 +13,7 @@ tag:
 
 upload:
 	python setup.py sdist upload
+
+ci:
+	git push
+	git push --tags
